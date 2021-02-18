@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { v4 as uuid } from "uuid";
-
+import PropTypes from 'prop-types';
 export const Formulario = ({ crearCita }) => {
   const [cita, actualizarCita] = useState({
     mascota: "",
@@ -51,7 +51,7 @@ export const Formulario = ({ crearCita }) => {
 
     // Reiniciar el form
     // Se reinicia porque este es el value en el form
-    
+
     actualizarCita({
       mascota: "",
       propietario: "",
@@ -128,3 +128,8 @@ export const Formulario = ({ crearCita }) => {
     </>
   );
 };
+
+Formulario.propTypes ={
+  crearCita: PropTypes.func.isRequired
+}
+
